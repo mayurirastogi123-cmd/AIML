@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function is a reusable block of code
+        //normal function
+        //without parameter
+        function demo(){
+            console.log("hello js");
+        }
+        demo():- //function calling
+        //with parameters
+        function demo(text){
+            console.log("hello"+ text);
+        }
+        demo("react");
+        //with default parameters
+        function call(a,b=0){
+            console.log("add"+(a+b));
+        }
+        call(12);
+        //function calling ke hisaab se print hota h n ki bnane ke sequence
+        //anonyomous function : function that does not have any name or identifier
+        let msg = function (){
+            console .log("hello advance js");
+        }
+        msg1();
+        // arrow function using multilines
+        let add=(a,b)={
+            console.log("first number is"+a);
+            console.log("second number is"+b);
+            console.log("addition of two number is"+(a+b));
+        }
+        add(4,5);
+        //IIFE: an immediately invoked function expressionis a js function that runs ass it is default.
+        </script>
+    
+</body>
+</html>
