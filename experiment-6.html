@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation & Events</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            transition: background 0.3s;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 8px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="heading">Welcome!</h1>
+
+    <input type="text" id="message" placeholder="Enter your message">
+
+    <br>
+
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="changeColor()">Change Background</button>
+    <button id="fontBtn">Change Font Size</button>
+    <button onclick="togglePara()">Show/Hide Paragraph</button>
+    <button onclick="resetPage()">Reset</button>
+
+    <p id="para">This is a sample paragraph.</p>
+</div>
+
+<script>
+    // Change heading text using input (onclick)
+    function changeHeading() {
+        let msg = document.getElementById("message").value;
+        document.getElementById("heading").innerText = msg || "No Message Entered!";
+    }
+
+    // Change background color (onmouseover event used)
+    function changeColor() {
+        let colors = ["lightblue", "lightgreen", "lightpink", "lightyellow"];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    // Change font size using addEventListener
+    let size = 18;
+    document.getElementById("fontBtn").addEventListener("click", function() {
+        size += 2;
+        document.getElementById("para").style.fontSize = size + "px";
+    });
+
+    // Show / Hide paragraph
+    function togglePara() {
+        let para = document.getElementById("para");
+        if (para.style.display === "none") {
+            para.style.display = "block";
+        } else {
+            para.style.display = "none";
+        }
+    }
+
+    // Reset page
+    function resetPage() {
+        location.reload();
+    }
+
+    // onchange event on input
+    document.getElementById("message").addEventListener("change", function() {
+        console.log("Input changed to: " + this.value);
+    });
+
+    // onmouseover event on heading
+    document.getElementById("heading").addEventListener("mouseover", function() {
+        this.style.color = "red";
+    });
+</script>
+
+</body>
+</html>
